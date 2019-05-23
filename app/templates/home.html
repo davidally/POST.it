@@ -2,17 +2,19 @@
 {% block content %}
 {% for post in posts %}
 <div class="post-container">
-    <div>
+    <div class="user-post-image">
         <img src="{{ url_for('static', filename='imgs/' + post.author.img) }}">
     </div>
-    <div class="post-title">
-        <h1>{{ post.title }}</h1>
-    </div>
-    <div class="post-author">
-        <p>{{ post.author.username }} on {{ post.date.strftime('%Y-%m-%d') }}</p>
-    </div>
-    <div class="post-content">
-        <p>{{ post.content }}</p>
+    <div class="content-wrapper">
+        <div class="post-title">
+            <h1><a href="{{ url_for('post', post_id=post.id) }}">{{ post.title }}</a></h1>
+        </div>
+        <div class="post-author">
+            <p>By {{ post.author.username }} on {{ post.date.strftime('%Y-%m-%d') }}</p>
+        </div>
+        <div class="post-content">
+            <p>{{ post.content }}</p>
+        </div>
     </div>
 </div>
 {% endfor %}
