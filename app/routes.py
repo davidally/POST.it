@@ -1,8 +1,7 @@
-from flask import Flask, render_template, url_for, flash, redirect
-from forms import RegistrationForm, LoginsForm
-app = Flask(__name__)
-
-app.config['SECRET_KEY'] = 'f9bf78b9a18ce6d46a0cd2b0b86df9da'
+from flask import render_template, url_for, flash, redirect
+from app import app
+from app.forms import RegistrationForm, LoginsForm
+from app.models import User, Post
 
 posts = [{
     'author': 'Admin',
@@ -44,7 +43,3 @@ def login():
     return render_template('login.html',
                            title='Log Into Your Account',
                            form=log_form)
-
-
-if __name__ == "__main__":
-    app.run(debug=True)
