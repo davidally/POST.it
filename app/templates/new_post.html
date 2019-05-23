@@ -4,9 +4,12 @@
     <form method="POST" action="">
         {{ form.hidden_tag() }}
         <fieldset class="form-group">
-            <legend>{{ legend }}</legend>
+            <h1 class="form-legend">
+                <legend>{{ legend }}</legend>
+            </h1>
             <div class="form-group">
                 {{ form.title.label(class="form-label") }}
+                <br>
 
                 {% if form.title.errors %}
                 {{ form.title(class="error-msg") }}
@@ -22,6 +25,7 @@
             </div>
             <div class="form-group">
                 {{ form.content.label(class="form-label") }}
+                <br>
 
                 {% if form.content.errors %}
                 {{ form.content(class="error-msg") }}
@@ -37,7 +41,6 @@
             </div>
         </fieldset>
         <div class="form-group">
-            {{ form.submit.label() }}
             {{ form.submit() }}
         </div>
     </form>

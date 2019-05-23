@@ -1,27 +1,31 @@
 {% extends "layout.html" %}
 {% block content %}
 <div class="post-container">
-    <div>
-        <img src="{{ url_for('static', filename='imgs/' + post.author.img) }}">
-    </div>
-    <div class="post-title">
-        <h1>{{ post.title }}</h1>
-    </div>
-    <div class="post-author">
-        <p>{{ post.author.username }} on {{ post.date.strftime('%Y-%m-%d') }}</p>
-    </div>
-    {% if post.author == current_user %}
-    <div>
-        <a href="{{ url_for('post_update', post_id=post.id) }}">Update</a>
-    </div>
-    <div>
-        <form action="{{ url_for('del_post', post_id=post.id) }}" method="POST">
-            <input type="submit" value="Delete">
-        </form>
-    </div>
-    {% endif %}
-    <div class="post-content">
-        <p>{{ post.content }}</p>
+    <div class="post-display-wrapper">
+        <div class="post-display-title">
+            <h1>{{ post.title }}</h1>
+            <div class="post-author">
+                <p>{{ post.author.username }} on {{ post.date.strftime('%Y-%m-%d') }}</p>
+            </div>
+        </div>
+        <div class="post-wrapper">
+            <div>
+                <img src="{{ url_for('static', filename='imgs/' + post.author.img) }}">
+            </div>
+            <div class="post-content">
+                <p>{{ post.content }}</p>
+            </div>
+            {% if post.author == current_user %}
+            <div>
+                <a href="{{ url_for('post_update', post_id=post.id) }}">Update</a>
+            </div>
+            <div>
+                <form action="{{ url_for('del_post', post_id=post.id) }}" method="POST">
+                    <input type="submit" value="Delete">
+                </form>
+            </div>
+            {% endif %}
+        </div>
     </div>
 </div>
 {% endblock content %}

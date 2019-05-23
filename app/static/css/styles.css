@@ -16,6 +16,18 @@ body {
     background-color: #e5e5e5;
 }
 
+textarea {
+    width: 100%;
+    height: 300px;
+}
+
+input,
+textarea {
+    border-radius: 2px;
+    border: 1px solid #c9c9c9;
+    margin-bottom: 20px;
+}
+
 /* HEADER STYLES */
 
 .site-header {
@@ -66,8 +78,8 @@ body {
 }
 
 .post-container {
-    margin: 20px;
     display: flex;
+    margin: 20px;
     padding: 25px;
     background-color: white;
 }
@@ -97,3 +109,40 @@ body {
 }
 
 /* END: HOMEPAGE POSTS */
+
+/* FORM STYLES */
+
+.form-content {
+    margin: 20px;
+    padding: 25px;
+    background-color: white;
+}
+
+.form-label {
+    font-size: 20px;
+    color: #37a2fd;
+    font-weight: unset;
+}
+
+/* END: FORMS */
+
+/* SINGLE POSTS */
+
+.post-display-title>h1,
+.form-legend legend {
+    font-family: 'Montserrat';
+    color: #8c8c8c;
+    font-size: 40px;
+    font-weight: 900;
+}
+
+.post-display-title,
+.form-legend legend {
+    margin-bottom: 30px;
+}
+
+.post-display-title {
+    width: 100%;
+}
+
+/* END: SINGLE POSTS */
