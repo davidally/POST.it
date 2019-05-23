@@ -1,25 +1,17 @@
+import os
+import secrets
+from PIL import Image
 from flask import render_template, url_for, flash, redirect, request
 from app import app, db, bcrypt
-from app.forms import RegistrationForm, LoginsForm
+from app.forms import RegistrationForm, LoginsForm, UpdateAccount, PostForm
 from app.models import User, Post
 from flask_login import login_user, current_user, logout_user, login_required
-
-posts = [{
-    'author': 'Admin',
-    'title': 'Post One',
-    'content': 'First post content.',
-    'date': 'April 20, 2018'
-}, {
-    'author': 'Admin Two',
-    'title': 'Post Two',
-    'content': 'Second post content.',
-    'date': 'April 20, 2018'
-}]
 
 
 @app.route("/")
 @app.route("/home")
 def home():
+    posts = Post.query.all()
     return render_template('home.html', posts=posts)
 
 
@@ -72,7 +64,58 @@ def logout():
     return redirect(url_for('home'))
 
 
-@app.route("/account")
+def save_img(form_img):
+    r_hex = secrets.token_hex(8)
+    _, f_ext = os.path.splitext(form_img.filename)
+    img_fn = r_hex + f_ext
+    img_path = os.path.join(app.root_path, 'static/imgs', img_fn)
+
+    out_size = (150, 150)
+    i = Image.open(form_img)
+    i.thumbnail(out_size)
+    i.save(img_path)
+    return img_fn
+
+
+@app.route("/account", methods=['GET', 'POST'])
 @login_required
 def account():
-    return render_template('account.html', title='Your Account')
+    upd_form = UpdateAccount()
+    if upd_form.validate_on_submit():
+        if upd_form.profile_img.data:
+            img_file = save_img(upd_form.profile_img.data)
+            current_user.img = img_file
+        current_user.username = upd_form.user.data
+        current_user.email = upd_form.email.data
+        db.session.commit()
+        flash('Your account has been updated.', 'Success')
+        return redirect(url_for('account'))
+    elif request.method == 'GET':
+        upd_form.user.data = current_user.username
+        upd_form.email.data = current_user.email
+    account_img = url_for('static', filename='imgs/' + current_user.img)
+    return render_template('account.html',
+                           title='Your Account',
+                           img=account_img,
+                           form=upd_form)
+
+
+@app.route("/post/new", methods=['GET', 'POST'])
+@login_required
+def create_post():
+    post_form = PostForm()
+    if post_form.validate_on_submit():
+        post = Post(title=post_form.title.data,
+                    content=post_form.content.data,
+                    author=current_user)
+        db.session.add(post)
+        db.session.commit()
+        flash('Your post has been created.', 'Success')
+        return redirect(url_for('home'))
+    return render_template('new_post.html', title='New Post', form=post_form)
+
+
+@app.route("/post/<int:post_id>")
+def post(post_id):
+    post = Post.query.get_or_404(post_id)
+    return render_template('post.html', title=post.title, post=post)
