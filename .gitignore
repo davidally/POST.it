@@ -2,5 +2,5 @@
 /.vscode
 /blogapp
 
-*.db
+*site.db
 *.pyc

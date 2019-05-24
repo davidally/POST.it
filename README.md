@@ -7,7 +7,12 @@ they are able to make posts to the main page where others are also visible. User
 
 ## Usage
 
-Simply run:
+Download then activate your virtual environment in the directory.
+```sh
+pip install -r requirements.txt
+```
+
+Then simply run:
 ```sh
 python run.py
 ```
