@@ -1,4 +1,4 @@
-# IS211_FinalProject
+# POST.it - IS211_FinalProject
 
 ## Background
 

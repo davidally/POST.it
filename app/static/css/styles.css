@@ -27,6 +27,11 @@ textarea {
     border: 1px solid #c9c9c9;
 }
 
+#logo {
+    font-weight: 900;
+    font-size: 50px;
+}
+
 .error-msg {
     color: white;
     background-color: #ce4040;
@@ -53,6 +58,7 @@ textarea {
 .nav-links {
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 .nav-links>li {
@@ -75,6 +81,7 @@ textarea {
 #main-content {
     display: grid;
     width: 100%;
+    padding-top: 50px;
     grid-template-columns: repeat(12, 1fr);
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
 }
