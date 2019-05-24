@@ -27,6 +27,16 @@ textarea {
     border: 1px solid #c9c9c9;
 }
 
+.error-msg {
+    color: white;
+    background-color: #ce4040;
+    padding: 20px;
+    margin-top: 30px;
+    border-radius: 4px;
+}
+
+/* HEADER STYLES */
+
 #text-logo {
     font-weight: 900;
     font-size: 50px;
@@ -43,15 +53,19 @@ textarea {
     align-items: center;
 }
 
-.error-msg {
-    color: white;
-    background-color: #ce4040;
-    padding: 20px;
-    margin-top: 30px;
-    border-radius: 4px;
-}
+@media (max-width:850px) {
+    #site-logo {
+        margin: 0 auto;
+        width: 150px;
+        float: none;
+        position: relative;
+    }
 
-/* HEADER STYLES */
+    #main-content {
+        padding-top: 150px !important;
+    }
+
+}
 
 .site-header {
     background-color: white;
@@ -140,6 +154,26 @@ textarea {
     right: 94px;
     background-color: #666;
     padding: 20px;
+}
+
+.post-buttons {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+}
+
+.page-btn {
+    text-decoration: none;
+    border: solid 1px black;
+    padding: 6px 10px;
+    border-radius: 20px;
+    margin: 0 2px;
+    font-size: 11px;
+}
+
+.active-page {
+    background-color: black;
+    color: white;
 }
 
 /* END: HOMEPAGE POSTS */
