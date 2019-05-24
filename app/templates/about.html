@@ -1,9 +1,15 @@
 {% extends "layout.html" %}
 {% block content %}
-<div>
-    <h1>About Page</h1>
-    <div>
-        <p></p>
+<div class="content-container" style="flex-direction: column;">
+    <legend>{{ legend }}</legend>
+    <div style="margin-top:20px;">
+        <p>Welcome to POST.it. A blogging application that lets you share
+            whats on your mind with others. Sign up for an account today and
+            start posting!
+        </p>
+        <div style="padding: 100px;">
+            <img src="{{ url_for('static', filename='imgs/blogabout.svg') }}">
+        </div>
     </div>
 </div>
 {% endblock content %}

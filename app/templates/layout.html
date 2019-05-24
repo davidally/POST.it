@@ -18,19 +18,25 @@
 <body>
     <header class="site-header">
         <nav class="navigation">
+            {% if current_user.is_authenticated %}
+            <div id="site-logo">
+                <img src="{{ url_for('static', filename='imgs/sitelogo.svg') }}">
+                <small>POST.IT</small>
+            </div>
+            {% endif %}
             <div class="nav-wrapper">
                 <div class="nav-menu">
                     <ul class="nav-links">
                         <li><a href="{{ url_for('home') }}">Home</a></li>
                         <li><a href="{{ url_for('about') }}">About</a></li>
-                        <li>
-                            <p id="logo">POST.it</p>
-                        </li>
                         {% if current_user.is_authenticated %}
                         <li><a href="{{ url_for('create_post') }}">Create Post</a></li>
                         <li><a href="{{ url_for('account') }}">Account</a></li>
                         <li><a href="{{ url_for('logout') }}">Logout</a></li>
                         {% else %}
+                        <li>
+                            <p id="text-logo">POST.it</p>
+                        </li>
                         <li><a href="{{ url_for('login') }}">Login</a></li>
                         <li><a href="{{ url_for('registration') }}">Register</a></li>
                         {% endif %}
