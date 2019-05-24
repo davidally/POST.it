@@ -5,53 +5,54 @@
         {{ form.hidden_tag() }}
         <fieldset class="form-group">
             <legend>Login</legend>
-            <div class="form-group">
-                {{ form.email.label(class="form-label") }}
+            <div class="field-wrapper">
+                <div class="form-group">
+                    {{ form.email.label(class="form-label") }}
 
-                {% if form.email.errors %}
-                {{ form.email(class="error-msg") }}
-                <div>
-                    {% for error in form.email.errors %}
-                    <span>{{ error }}</span>
-                    {% endfor %}
+                    {% if form.email.errors %}
+                    {{ form.email(class="error-msg") }}
+                    <div>
+                        {% for error in form.email.errors %}
+                        <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                    {% else %}
+                    {{ form.email() }}
+                    {% endif %}
+
                 </div>
-                {% else %}
-                {{ form.email() }}
-                {% endif %}
+                <div class="form-group">
+                    {{ form.password.label(class="form-label") }}
 
-            </div>
-            <div class="form-group">
-                {{ form.password.label(class="form-label") }}
+                    {% if form.password.errors %}
+                    {{ form.password(class="error-msg") }}
+                    <div>
+                        {% for error in form.password.errors %}
+                        <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                    {% else %}
+                    {{ form.password() }}
+                    {% endif %}
 
-                {% if form.password.errors %}
-                {{ form.password(class="error-msg") }}
-                <div>
-                    {% for error in form.password.errors %}
-                    <span>{{ error }}</span>
-                    {% endfor %}
                 </div>
-                {% else %}
-                {{ form.password() }}
-                {% endif %}
-
+                <div>
+                    {{ form.stay_on.label(class="form-label") }}
+                    {{ form.stay_on }}
+                </div>
+                <small>
+                    <a href="#">Forgot password?</a>
+                </small>
             </div>
-            <div>
-                {{ form.stay_on }}
-                {{ form.stay_on.label }}
-            </div>
-            <small>
-                <a href="#">Forgot password?</a>
-            </small>
         </fieldset>
         <div class="form-group">
-            {{ form.submit.label() }}
             {{ form.submit() }}
         </div>
     </form>
-</div>
-<div>
-    <small>
-        Don't have an account? <a href="{{ url_for('registration') }}">Sign Up Now</a>
-    </small>
+    <div>
+        <small>
+            Don't have an account? <a href="{{ url_for('registration') }}">Sign Up Now</a>
+        </small>
+    </div>
 </div>
 {% endblock content %}

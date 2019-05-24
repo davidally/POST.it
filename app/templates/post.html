@@ -5,24 +5,26 @@
         <div class="post-display-title">
             <h1>{{ post.title }}</h1>
             <div class="post-author">
-                <p>{{ post.author.username }} on {{ post.date.strftime('%Y-%m-%d') }}</p>
+                <p>{{ post.author.username }} on {{ post.date.strftime('%B %d, %Y') }}</p>
             </div>
         </div>
         <div class="post-wrapper">
-            <div>
+            <div class="post-display-img">
                 <img src="{{ url_for('static', filename='imgs/' + post.author.img) }}">
             </div>
             <div class="post-content">
                 <p>{{ post.content }}</p>
             </div>
             {% if post.author == current_user %}
-            <div>
-                <a href="{{ url_for('post_update', post_id=post.id) }}">Update</a>
-            </div>
-            <div>
-                <form action="{{ url_for('del_post', post_id=post.id) }}" method="POST">
-                    <input type="submit" value="Delete">
-                </form>
+            <div class="user-options">
+                <div>
+                    <a href="{{ url_for('post_update', post_id=post.id) }}">Update</a>
+                </div>
+                <div>
+                    <form action="{{ url_for('del_post', post_id=post.id) }}" method="POST">
+                        <input type="submit" value="Delete">
+                    </form>
+                </div>
             </div>
             {% endif %}
         </div>

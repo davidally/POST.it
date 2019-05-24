@@ -10,7 +10,7 @@
             <h1><a href="{{ url_for('post', post_id=post.id) }}">{{ post.title }}</a></h1>
         </div>
         <div class="post-author">
-            <p>By {{ post.author.username }} on {{ post.date.strftime('%Y-%m-%d') }}</p>
+            <p>By {{ post.author.username }} - {{ post.date.strftime('%m/%d/%Y') }}</p>
         </div>
         <div class="post-content">
             <p>{{ post.content }}</p>

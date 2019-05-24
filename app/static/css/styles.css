@@ -25,7 +25,14 @@ input,
 textarea {
     border-radius: 2px;
     border: 1px solid #c9c9c9;
-    margin-bottom: 20px;
+}
+
+.error-msg {
+    color: white;
+    background-color: #ce4040;
+    padding: 20px;
+    margin-top: 30px;
+    border-radius: 4px;
 }
 
 /* HEADER STYLES */
@@ -35,6 +42,7 @@ textarea {
     position: fixed;
     width: 100%;
     box-shadow: 0 4px 5px 0px rgba(0, 0, 0, .3);
+    z-index: 1;
 }
 
 .nav-wrapper {
@@ -67,12 +75,12 @@ textarea {
 #main-content {
     display: grid;
     width: 100%;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: repeat(12, 1fr);
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
 }
 
 .posts-content {
-    grid-column: 2 / span 4;
+    grid-column: 3 / span 8;
     padding: 50px 0;
     margin-top: 30px;
 }
@@ -108,9 +116,20 @@ textarea {
     font-style: italic;
 }
 
+.date-container {
+    position: absolute;
+    right: 94px;
+    background-color: #666;
+    padding: 20px;
+}
+
 /* END: HOMEPAGE POSTS */
 
 /* FORM STYLES */
+
+.field-wrapper {
+    margin-top: 30px;
+}
 
 .form-content {
     margin: 20px;
@@ -121,7 +140,15 @@ textarea {
 .form-label {
     font-size: 20px;
     color: #37a2fd;
-    font-weight: unset;
+    font-weight: 300;
+    width: 200px;
+    display: inline-block;
+    text-align: left;
+}
+
+.account-container,
+.form-group {
+    margin-bottom: 20px;
 }
 
 /* END: FORMS */
@@ -129,7 +156,7 @@ textarea {
 /* SINGLE POSTS */
 
 .post-display-title>h1,
-.form-legend legend {
+legend {
     font-family: 'Montserrat';
     color: #8c8c8c;
     font-size: 40px;
@@ -143,6 +170,11 @@ textarea {
 
 .post-display-title {
     width: 100%;
+}
+
+.post-display-img {
+    float: left;
+    margin: 20px;
 }
 
 /* END: SINGLE POSTS */
