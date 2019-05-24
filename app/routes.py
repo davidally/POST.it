@@ -7,6 +7,7 @@ from app.forms import RegistrationForm, LoginsForm, UpdateAccount, PostForm
 from app.models import User, Post
 from flask_login import login_user, current_user, logout_user, login_required
 
+#Initialize database
 db.create_all()
 
 

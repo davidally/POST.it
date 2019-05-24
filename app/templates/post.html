@@ -17,10 +17,10 @@
             </div>
             {% if post.author == current_user %}
             <div class="user-options">
-                <div>
+                <div class="action-btn">
                     <a href="{{ url_for('post_update', post_id=post.id) }}">Update</a>
                 </div>
-                <div>
+                <div class="del-btn">
                     <form action="{{ url_for('del_post', post_id=post.id) }}" method="POST">
                         <input type="submit" value="Delete">
                     </form>

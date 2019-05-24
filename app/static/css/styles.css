@@ -27,6 +27,8 @@ textarea {
     border: 1px solid #c9c9c9;
 }
 
+/* BUTTONS */
+
 .error-msg {
     color: white;
     background-color: #ce4040;
@@ -34,6 +36,34 @@ textarea {
     margin-top: 30px;
     border-radius: 4px;
 }
+
+.del-btn input {
+    background-color: #d22f2f;
+    color: white;
+    padding: 10px 30px;
+    border-radius: 5px;
+    border: solid 2px #c65555;
+}
+
+.action-btn input,
+.action-btn a {
+    background-color: #6b44bf;
+    color: white;
+    padding: 8px 30px;
+    border-radius: 5px;
+    border: solid 2px #8c76bc;
+    text-decoration: none;
+}
+
+.action-btn input:hover,
+.action-btn a:hover,
+.del-btn input:hover {
+    background-color: rgba(0, 0, 0, 0);
+    color: black;
+    transition-duration: 300ms;
+}
+
+/* END: BUTTONS */
 
 /* HEADER STYLES */
 
@@ -228,6 +258,15 @@ legend {
 .post-display-img {
     float: left;
     margin: 20px;
+}
+
+.user-options {
+    display: flex;
+    margin-top: 20px;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 100px;
 }
 
 /* END: SINGLE POSTS */
