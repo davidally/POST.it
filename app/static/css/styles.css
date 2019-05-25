@@ -190,6 +190,11 @@ textarea {
 
 /* FORM STYLES */
 
+.new-title input {
+    width: 100%;
+    height: 50px;
+}
+
 .field-wrapper {
     margin-top: 30px;
 }

@@ -2,6 +2,9 @@
 
 ## Hosted at: http://davidally.pythonanywhere.com/
 
+## Possible Bugs
+1) Login may require you to copy and paste your information to log in rather than type.
+
 ## About POST.it
 
 Users can register and create their own accounts. Once logged in 
