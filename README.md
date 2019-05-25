@@ -3,7 +3,7 @@
 ## Hosted at: http://davidally.pythonanywhere.com/
 
 ## Possible Bugs
-1) Login may require you to copy and paste your information to log in rather than type.
+1) Login may require you to copy and paste your information to log in rather than type. This doesn't always happen but if it does, this is the fix.
 
 ## About POST.it
 
