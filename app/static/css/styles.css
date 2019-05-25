@@ -83,20 +83,6 @@ textarea {
     align-items: center;
 }
 
-@media (max-width:850px) {
-    #site-logo {
-        margin: 0 auto;
-        width: 150px;
-        float: none;
-        position: relative;
-    }
-
-    #main-content {
-        padding-top: 150px !important;
-    }
-
-}
-
 .site-header {
     background-color: white;
     position: fixed;
@@ -147,6 +133,7 @@ textarea {
     margin-top: 30px;
 }
 
+.dash-container,
 .content-container,
 .post-container {
     display: flex;
@@ -177,13 +164,6 @@ textarea {
 .post-content>p {
     color: #606060;
     font-style: italic;
-}
-
-.date-container {
-    position: absolute;
-    right: 94px;
-    background-color: #666;
-    padding: 20px;
 }
 
 .post-buttons {
@@ -270,3 +250,33 @@ legend {
 }
 
 /* END: SINGLE POSTS */
+
+
+/* DASHBOARD */
+
+.dash-container {
+    margin: 20px;
+    padding: 25px;
+    background-color: white;
+}
+
+.dash-btn {
+    margin-top: 20px;
+}
+
+@media (max-width:850px) {
+    #site-logo {
+        margin: 0 auto;
+        width: 150px;
+        float: none;
+        position: relative;
+    }
+
+    #main-content {
+        padding-top: 150px !important;
+    }
+
+    .posts-content {
+        grid-column: 1 / span 12;
+    }
+}
