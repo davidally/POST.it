@@ -25,6 +25,10 @@ Then open localhost:5000 on your browser to view the web application.
 
 The application will be empty upon opening, so you should Register an account then move on to create some posts to see it in action.
 
+If using the online version I encourage you to register and try the whole process. But if not then here is one login:
+email: admin@email.com
+pass: 123pass
+
 ## How It Works
 
 This is a blogging application written in Python using the Flask framework.  
