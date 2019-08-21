@@ -1,19 +1,23 @@
-# POST.it - IS211_FinalProject
+# POST.it
 
 ## Hosted at: http://davidally.pythonanywhere.com/
 
 ## Possible Bugs
 1) Login may require you to copy and paste your information to log in rather than type. This doesn't always happen but if it does, this is the fix.
 
+Please open an issue if you encounter any bugs when using the app. 
+
 ## About POST.it
 
 Users can register and create their own accounts. Once logged in 
 they are able to make posts to the main page where others are also visible. Users can edit or delete their posts and account information.
 
-## Usage
+## Running POST.it locally
 
-Download then activate your virtual environment in the directory.
+Clone this repo then activate your virtual env in the directory.  
+Next run:
 ```sh
+#Install all required packages
 pip install -r requirements.txt
 ```
 
@@ -21,13 +25,9 @@ Then simply run:
 ```sh
 python run.py
 ```
-Then open localhost:5000 on your browser to view the web application.
+Open localhost:5000 on your browser to view the web application.
 
 The application will be empty upon opening, so you should Register an account then move on to create some posts to see it in action.
-
-If using the online version I encourage you to register and try the whole process. But if not then here is one login:
-email: admin@email.com
-pass: 123pass
 
 ## How It Works
 
