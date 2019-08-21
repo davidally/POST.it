@@ -1,15 +1,16 @@
 # POST.it
 
+## TRY A LIVE VERSION OF THE APP!
 ## Hosted at: http://davidally.pythonanywhere.com/
 
 ## Possible Bugs
-1) Login may require you to copy and paste your information to log in rather than type. This doesn't always happen but if it does, this is the fix.
+1) Login may require you to copy and paste your information to log in rather than type. This doesn't always happen but if it does, that is the fix. This will be worked on at a later date. 
 
 Please open an issue if you encounter any bugs when using the app. 
 
 ## About POST.it
 
-Users can register and create their own accounts. Once logged in 
+A full stack blog application where users can register and create/customize their own accounts. Once logged in 
 they are able to make posts to the main page where others are also visible. Users can edit or delete their posts and account information.
 
 ## Running POST.it locally
